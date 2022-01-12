@@ -8,14 +8,20 @@
         </section>
 
         <section class="right">
-            <a href="/photos">Photos</a>
-            <a href="/blog">Blog</a>
+            <a href="/photos">photos</a>
+            <a href="/blog">blog</a>
             <!-- tw / ig? -->
         </section>
     </nav>
 </header>
 
 <style>
+    a {
+        color: black;
+        text-decoration: none;
+        font-size: 24px;
+    }
+
     header {
         grid-column: 1 / -1;
     }
@@ -24,5 +30,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .right a {
+        margin: 0 5px;
     }
 </style>

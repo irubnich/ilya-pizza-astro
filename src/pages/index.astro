@@ -7,8 +7,23 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
 
 <BaseLayout>
 	<main>
-		<h1>hi</h1>
-		<p>index page text</p>
+		<h1>hi, i'm ilya.</h1>
+		<section class="hero">
+			<img src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/251db9db-a437-40b7-90aa-752fa2b66463/DSC03890.jpg" />
+		</section>
+		<section class="two-col">
+			<div class="col1">
+				<p>
+					I'm a transit nerd, software engineer, cat dad, and city dweller.
+				</p>
+				<p>These are my cats.</p>
+			</div>
+			<div class="col2">
+				# cat 1
+				# cat 2
+				# cat 3
+			</div>
+		</section>
 	</main>
 </BaseLayout>
 
@@ -16,4 +31,31 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
     main {
         grid-column: 1 / -1;
     }
+
+	h1 {
+		margin: 20px 0;
+	}
+
+	.hero {
+		margin: 20px 0;
+	}
+
+	.hero img {
+		width: 100%;
+	}
+
+	.two-col {
+		display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+	}
+
+	.col1 {
+		grid-column: 1 / 2;
+	}
+
+	.col2 {
+		grid-column: 2 / -1;
+	}
 </style>
