@@ -1,9 +1,10 @@
 ---
+import {formatDate} from '../utils.ts'
 const { post } = Astro.props
 ---
 
 <> <!-- vscode making this necessary -->
-[{post.publishDate}]
+[{formatDate(post.publishDate)}]
 <a href={post.url}>
     {post.title}
 </a>

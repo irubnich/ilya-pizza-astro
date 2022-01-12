@@ -1,10 +1,18 @@
 ---
 import BaseLayout from './BaseLayout.astro'
+import {formatDate} from '../utils.ts'
 const {content} = Astro.props
 ---
 <BaseLayout title={content.title}>
     <article>
-        <div class="date">{content.publishDate}</div>
+        <div class="title">{content.title}</div>
+        <div class="date">{formatDate(content.publishDate)}</div>
         <slot />
     </article>
 </BaseLayout>
+
+<style>
+    .title {
+        font-weight: bold;
+    }
+</style>
