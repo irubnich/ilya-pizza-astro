@@ -1,17 +1,26 @@
 ---
-const { title } = Astro.props
+const {title} = Astro.props
+const name = 'ilya rubnich'
 ---
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-	    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	    <link rel="icon" href="/favicon.png" />
 
-        <title>{title}</title>
+        <title>{(title) ? `${title} - ${name}` : name}</title>
     </head>
     <body>
         <nav>
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
         </nav>
         <slot />
     </body>
 </html>
+
+<style>
+    body {
+        background-color: aqua;
+    }
+</style>
