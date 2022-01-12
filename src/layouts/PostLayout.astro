@@ -4,15 +4,29 @@ import {formatDate} from '../utils.ts'
 const {content} = Astro.props
 ---
 <BaseLayout title={content.title}>
-    <article>
+    <article class="wrapper">
         <div class="title">{content.title}</div>
-        <div class="date">{formatDate(content.publishDate)}</div>
-        <slot />
+        <div class="date">Published {formatDate(content.publishDate)}</div>
+        <div class="content">
+            <slot />
+        </div>
     </article>
 </BaseLayout>
 
-<style>
-    .title {
-        font-weight: bold;
+<style lang="scss">
+    .wrapper {
+        grid-column: 1 / -1;
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .date {
+            font-style: italic;
+        }
+
+        .content {
+        }
     }
 </style>
