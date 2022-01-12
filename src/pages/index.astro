@@ -6,9 +6,14 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
 ---
 
 <BaseLayout>
-	<h1>hi</h1>
-	<p>index page text</p>
+	<main>
+		<h1>hi</h1>
+		<p>index page text</p>
+	</main>
 </BaseLayout>
 
 <style>
+    main {
+        grid-column: 1 / -1;
+    }
 </style>

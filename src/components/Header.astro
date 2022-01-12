@@ -3,10 +3,34 @@
 
 <header>
     <nav>
-        <a href="/">Home</a>
-        <a href="/blog">Blog</a>
+        <section class="left">
+            <a href="/">ilya rubnich</a>
+        </section>
+
+        <section class="right">
+            <a href="/photos">Photos</a>
+            <a href="/blog">Blog</a>
+            <!-- tw / ig? -->
+        </section>
     </nav>
 </header>
 
 <style>
+    header {
+        grid-column: 1 / -1;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section.left {
+        grid-column: 1 / 2;
+    }
+
+    section.right {
+        grid-column: 2 / -1;
+        justify-self: right;
+    }
 </style>

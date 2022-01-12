@@ -14,11 +14,9 @@ const name = 'ilya rubnich'
         <title>{(title) ? `${title} - ${name}` : name}</title>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="grid-container">
             <Header />
-            <main>
-                <slot />
-            </main>
+            <slot />
             <Footer />
         </div>
     </body>
@@ -27,5 +25,12 @@ const name = 'ilya rubnich'
 <style>
     body {
         background-color: aqua;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px;
     }
 </style>

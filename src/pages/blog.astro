@@ -7,6 +7,14 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
 ---
 
 <BaseLayout title="blog">
-    <p>here are my posts</p>
-    {posts.map(p => <BlogPostPreview post={p} />)}
+    <main>
+        <p>here are my posts</p>
+        {posts.map(p => <BlogPostPreview post={p} />)}
+    </main>
 </BaseLayout>
+
+<style>
+    main {
+        grid-column: 1 / -1;
+    }
+</style>
