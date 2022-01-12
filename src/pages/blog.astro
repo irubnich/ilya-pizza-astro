@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BlogPostPreview from '../components/BlogPostPreview.astro'
+
+let posts = await Astro.fetchContent('./posts/*.md')
+posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
+---
+
+<BaseLayout title="">
+    <p>here are my posts</p>
+    {posts.map(p => <BlogPostPreview post={p} />)}
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+export interface Props {
+    post: any
+}
+
+const { post } = Astro.props
+---
+
+<article>
+    Date: {post.publishDate}<br>
+    <p>Desc: {post.description}</p>
+    <p>URL: {post.url}</p>
+</article>
