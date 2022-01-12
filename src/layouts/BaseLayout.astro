@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro'
+
 const {title} = Astro.props
 const name = 'ilya rubnich'
 ---
@@ -11,11 +13,12 @@ const name = 'ilya rubnich'
         <title>{(title) ? `${title} - ${name}` : name}</title>
     </head>
     <body>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/blog">Blog</a>
-        </nav>
-        <slot />
+        <div class="wrapper">
+            <Header />
+            <main>
+                <slot />
+            </main>
+        </div>
     </body>
 </html>
 
