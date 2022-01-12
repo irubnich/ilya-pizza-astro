@@ -7,18 +7,16 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
 
 <BaseLayout>
 	<main>
-		<h1>hi, i'm ilya.</h1>
-		<section class="hero">
+		<h1 class="text-4xl font-bold mb-8">hi, i'm ilya.</h1>
+		<section class="my-4">
 			<img src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/251db9db-a437-40b7-90aa-752fa2b66463/DSC03890.jpg" />
 		</section>
-		<section class="two-col">
-			<div class="col1">
-				<p class="me">
-					I'm a transit nerd, software engineer, cat dad, and city dweller.
-				</p>
-				<p class="cats">These are my cats.</p>
+		<section class="grid grid-cols-2 gap-6 mt-20 mb-6">
+			<div>
+				<p class="text-4xl font-bold">i'm a transit nerd, software engineer, cat dad, and city dweller.</p>
+				<p class="text-2xl mt-4">these are my cats.</p>
 			</div>
-			<div class="col2">
+			<div class="grid grid-cols-3 gap-4 items-stretch">
 				<img src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/d29d5650-5b2c-4d15-82d4-f80b52243e32/IMG_1731.jpg" />
 				<img src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/3da70620-7ac7-4503-a34f-6a0a537412a8/DSC03691.jpg" />
 				<img src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/f5464f9a-92d4-4dae-97db-af8871cd8d4f/DSC03629.jpg" />
@@ -26,49 +24,3 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
 		</section>
 	</main>
 </BaseLayout>
-
-<style>
-    main {
-        grid-column: 1 / -1;
-    }
-
-	h1 {
-		margin: 20px 0;
-	}
-
-	.hero {
-		margin: 20px 0;
-	}
-
-	.hero img {
-		width: 100%;
-	}
-
-	.two-col {
-		display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto;
-        gap: 20px;
-		justify-items: right;
-	}
-
-	.col1 {
-		grid-column: 1 / 2;
-	}
-
-	.col1 .me {
-		font-size: 30px;
-	}
-
-	.col1 .cats {
-		font-size: 20px;
-	}
-
-	.col2 {
-		grid-column: 2 / -1;
-	}
-
-	.col2 img {
-		max-width: 200px;
-	}
-</style>

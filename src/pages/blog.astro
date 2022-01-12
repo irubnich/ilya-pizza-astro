@@ -8,13 +8,7 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
 
 <BaseLayout title="blog">
     <main>
-        <h2>sometimes i write stuff on the internet</h2>
+        <h2 class="text-xl font-bold">sometimes i write stuff on the internet</h2>
         {posts.map(p => <BlogPostPreview post={p} />)}
     </main>
 </BaseLayout>
-
-<style>
-    main {
-        grid-column: 1 / -1;
-    }
-</style>

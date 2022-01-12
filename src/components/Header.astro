@@ -1,13 +1,10 @@
----
----
-
-<header>
-    <nav>
-        <section class="left">
+<header class="mb-8 text-xl font-medium">
+    <nav class="flex justify-between">
+        <section>
             <a href="/">ilya rubnich</a>
         </section>
 
-        <section class="right">
+        <section class="space-x-3">
             <a href="/photos">photos</a>
             <a href="/blog">blog</a>
             <a href="https://twitter.com/irubnich" target="_blank">tw</a>
@@ -15,29 +12,3 @@
         </section>
     </nav>
 </header>
-
-<style>
-    a {
-        color: black;
-        text-decoration: none;
-        font-size: 1.4rem;
-    }
-
-    header {
-        grid-column: 1 / -1;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .left {
-        font-weight: 500;
-    }
-
-    .right a {
-        margin: 0 5px;
-    }
-</style>

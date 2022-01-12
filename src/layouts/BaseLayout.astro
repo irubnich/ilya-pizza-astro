@@ -11,33 +11,13 @@ const name = 'ilya rubnich'
         <meta name="viewport" content="width=device-width">
 	    <link rel="icon" href="/favicon.png" />
 
+        <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+
         <title>{(title) ? `${title} - ${name}` : name}</title>
     </head>
-    <body>
-        <div class="grid-container">
-            <Header />
-            <slot />
-            <Footer />
-        </div>
+    <body class="font-sans max-w-7xl mx-auto p-4">
+        <Header />
+        <slot />
+        <Footer />
     </body>
 </html>
-
-<style>
-    body {
-        background-color: #055;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    }
-
-    .grid-container {
-        background-color: white;
-
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        grid-template-rows: auto 1fr auto;
-        gap: 20px;
-
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-</style>
