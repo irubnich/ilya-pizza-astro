@@ -2,6 +2,8 @@
 title: Building a DIY Router in 2019
 publishDate: 2019-11-10
 layout: ../../layouts/PostLayout.astro
+setup: |
+    import ImageWithCaption from '../../components/ImageWithCaption.tsx'
 ---
 
 # The Itch
@@ -25,10 +27,7 @@ A **gateway** is a device that sits between your ISP and your home network and a
 
 A gateway uses something called Network Address Translation (NAT) to solve this by creating a local network with its own IP address space (typically in the range of 192.168.1.2 - 192.168.1.254). So while your ISP-assigned IP is something like 108.110.50.153, the gateway isolates this from your devices and instead assigns them something like 192.168.1.150. Now that all your devices have a unique IP, they can access the internet!
 
-<figure>
-    <img alt="gateway diagram" src="/assets/img/posts/router/gateway.png" />
-    <figcaption>gateway diagram</figcaption>
-</figure>
+<ImageWithCaption alt="gateway diagram" src="/assets/img/posts/router/gateway.png" />
 
 A **switch** is a device that routes network traffic between devices. Switches are great because they work transparently - you can plug as many devices into a switch as it allows, and network traffic will flow between those devices.
 
@@ -126,38 +125,26 @@ Marvell>> reset
 
 After resetting, the board should finally boot and you should see the OpenWRT welcome screen!
 
-<figure>
-    <img alt="welcome screen" src="/assets/img/posts/router/openwrt-boot.png" />
-    <figcaption>welcome screen</figcaption>
-</figure>
+<ImageWithCaption alt="welcome screen" src="/assets/img/posts/router/openwrt-boot.png" />
 
 # Wiring Everything Together
 At this point, your ESPRESSObin is set up and you basically just need to plug stuff in. I won't tell you exactly how to plug everything in, but your setup should look something like this (beautiful) diagram.
 
-<figure>
-    <img alt="wiring diagram" src="/assets/img/posts/router/final-wiring.png" />
-    <figcaption>wiring diagram</figcaption>
-</figure>
+<ImageWithCaption alt="wiring diagram" src="/assets/img/posts/router/final-wiring.png" />
 
 ## 🚨 ALERT: The ports are not mapped correctly! 🚨
 Because of what I assume is a bug with OpenWRT's ESPRESSObin port mappings, the ports on the ESPRESSObin are not what you would expect them to be.
 
 Here is the port layout of the ESPRESSObin v7.
 
-<figure>
-    <img alt="port layout" src="/assets/img/posts/router/espressobin.png" />
-    <figcaption>port layout</figcaption>
-</figure>
+<ImageWithCaption alt="port layout" src="/assets/img/posts/router/espressobin.png" />
 
 You might expect the WAN port to connect to your modem, and one of the LAN ports would connect to your switch. But that's not how OpenWRT sees it. Instead, **you should connect your modem to the LAN2 port and your switch to the WAN port**. Otherwise the DHCP server won't work correctly and your devices will look like they're connected directly to your modem (that is, assigned an ISP IP address). This will break the network, and you don't want that.
 
 # Setting up OpenWRT
 If all went well, you should be able to access OpenWRT from any device connected to your new network at [http://192.168.1.1](http://192.168.1.1). Here, you can set the admin dashboard password and your SSH password (no more serial port!). You can also configure any network settings that you're used to on your current router, and many more that you likely did not know existed.
 
-<figure>
-    <img alt="OpenWrt admin" src="/assets/img/posts/router/openwrt-dash.jpg" />
-    <figcaption>OpenWrt admin</figcaption>
-</figure>
+<ImageWithCaption alt="OpenWrt admin" src="/assets/img/posts/router/openwrt-dash.jpg" />
 
 # Setting up your AP
 You should now plug your AP into your switch and walk through its setup process. The UniFi comes with a pretty nice network manager app that has a surprisingly user-friendly setup process for a device that's generally meant to be used in a corporate setting.
@@ -169,10 +156,7 @@ With the UniFi, I had to change the 5G network channel because it was slow at fi
 # Conclusions
 I've now been running this new setup for over a week, and my network is as stable as ever. Everything runs just as fast as it did with my Verizon router, which I'll be returning soon. Nothing has ever randomly crashed or slowed down. Video streaming works great on all the usual providers.
 
-<figure>
-    <img alt="fios is great" src="/assets/img/posts/router/speed.png" />
-    <figcaption>fios is great</figcaption>
-</figure>
+<ImageWithCaption alt="fios is great" src="/assets/img/posts/router/speed.png" />
 
 I'll admit that I haven't fully tested all the things that lots of people care about, such as gaming performance. But I'd certainly feel confident trying that out.
 
@@ -187,7 +171,4 @@ Setting up the Pi-hole motivated me to go deeper into the DIY networking rabbit 
 
 The Pi-hole makes for a great DHCP server companion to an OpenWRT setup. And it also provides customizable network-wide ad blocking. And it comes with a cool dashboard that lets you see your local network in action! Turns out, on average, almost 20% of my network traffic is ads. I guess I expected that, but it still makes you think.
 
-<figure>
-    <img alt="Pi-hole dash" src="/assets/img/posts/router/pihole.png" />
-    <figcaption>Pi-hole dash</figcaption>
-</figure>
+<ImageWithCaption alt="Pi-hole dash" src="/assets/img/posts/router/pihole.png" />
