@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import Counter from '../components/Counter.tsx'
 
 let posts = await Astro.fetchContent('./posts/*.md')
 posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
@@ -10,7 +9,7 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
 	<main>
 		<h1 class="text-4xl font-bold mb-8">hi, i'm ilya.</h1>
 		<section class="my-4">
-			<img alt="me" src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/251db9db-a437-40b7-90aa-752fa2b66463/DSC03890.jpg" />
+			<img alt="me" src="/assets/img/me.jpg" />
 		</section>
 		<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:mt-20 mb-6">
 			<div>
@@ -18,11 +17,10 @@ posts = posts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publ
 				<p class="text-2xl mt-4">these are my cats.</p>
 			</div>
 			<div class="grid grid-cols-3 gap-4 items-stretch">
-				<img alt="junior" src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/d29d5650-5b2c-4d15-82d4-f80b52243e32/IMG_1731.jpg" />
-				<img alt="andy" src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/3da70620-7ac7-4503-a34f-6a0a537412a8/DSC03691.jpg" />
-				<img alt="draco" src="https://images.squarespace-cdn.com/content/v1/61bcac49354605783a93d507/f5464f9a-92d4-4dae-97db-af8871cd8d4f/DSC03629.jpg" />
+				<img alt="junior" src="/assets/img/junior.jpg" />
+				<img alt="andy" src="/assets/img/andy.jpg" />
+				<img alt="draco" src="/assets/img/draco.jpg" />
 			</div>
 		</section>
 	</main>
-	<Counter client:load />
 </BaseLayout>
