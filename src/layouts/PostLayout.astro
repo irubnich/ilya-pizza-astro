@@ -21,6 +21,11 @@ const {content} = Astro.props
     h2 { @apply text-2xl font-bold my-4; }
     h3 { @apply text-xl font-bold my-4; }
     p { @apply text-base my-4; }
+    figure {
+        @apply p-4 bg-gray-200 mx-auto max-w-max text-center;
+        img { @apply max-w-2xl; }
+        figcaption { @apply mt-2; }
+    }
     a { @apply underline; }
     ol { @apply list-decimal list-inside; }
     ul { @apply list-disc list-inside; }
