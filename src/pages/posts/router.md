@@ -70,21 +70,17 @@ For some reason (that a software guy like me can't ever truly understand), the E
 1. Plug your ESPRESSObin into a USB port with the included cable
 2. Fire up a serial terminal. Note that it will be blank for now and that's expected!
 
-    On macOS, you'll need a driver first that you can get here. After installing the driver and rebooting, you should be able to use this command to get a terminal ready:
+> On macOS, you'll need a driver first that you can get here. After installing the driver and rebooting, you should be able to use this command to get a terminal ready:<br><br>
+> `sudo screen /dev/ttyUSB0 115200 -L`<br><br>
+> If that doesn't work, try running `ls /dev` and find a device that looks like `/dev/ttyUSBX`, where X is a number. You can then use that in the above screen command.
 
-    ```
-    sudo screen /dev/ttyUSB0 115200 -L
-    ```
+> On Linux, `sudo screen /dev/ttyUSB0 115200` should work without any drivers. The same note applies here as with macOS for finding a non-0 tty device.
 
-    If that doesn't work, try running `ls /dev` and find a device that looks like `/dev/ttyUSBX`, where X is a number. You can then use that in the above screen command.
-
-    On Linux, `sudo screen /dev/ttyUSB0 115200` should work without any drivers. The same note applies here as with macOS for finding a non-0 tty device.
-
-    On Windows, you can use PuTTY with a connection type of "Serial", a serial line of "COMX", and a speed of "115200". Replace the X in COMX with the actual serial port that Windows assigns to your board.
+> On Windows, you can use PuTTY with a connection type of "Serial", a serial line of "COMX", and a speed of "115200". Replace the X in COMX with the actual serial port that Windows assigns to your board.
 
 3. Plug in your ESPRESSObin's power adapter. If all went well, you should see it booting up in the console!
 
-    You will be able to see your current bootloader version during the boot process. If you're already running U-Boot 2017.03-armada-17.10, you should be able to skip the rest of this section.
+You will be able to see your current bootloader version during the boot process. If you're already running U-Boot 2017.03-armada-17.10, you should be able to skip the rest of this section.
 
 When your ESPRESSObin first boots, it will fail to actually boot an OS because, well, there isn't one. So it will flash some errors and drop you into a bootloader prompt that looks like this:
 
