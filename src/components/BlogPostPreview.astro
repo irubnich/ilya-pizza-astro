@@ -1,9 +1,0 @@
----
-import {formatDate} from '../utils.ts'
-const { post } = Astro.props
----
-
-<>
-    <span class="font-semibold">[{formatDate(post.publishDate)}] </span>
-    <a class="underline" href={post.url}>{post.title}</a>
-</>
