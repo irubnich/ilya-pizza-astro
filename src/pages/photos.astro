@@ -14,8 +14,8 @@ const images = fs.readdirSync(path)
 		<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
 			{images.map(img => {
 				return (
-					<a href={`${path}/${img}`}>
-						<img src={`${path}/${img}`} />
+					<a href={`/assets/img/gallery/${img}`}>
+						<img src={`/assets/img/gallery/${img}`} />
 					</a>
 				)
 			})}
