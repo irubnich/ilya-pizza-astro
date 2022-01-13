@@ -3,9 +3,7 @@ import {formatDate} from '../utils.ts'
 const { post } = Astro.props
 ---
 
-<> <!-- vscode making this necessary -->
-[{formatDate(post.publishDate)}]
-<a href={post.url}>
-    {post.title}
-</a>
+<>
+    <span class="font-semibold">[{formatDate(post.publishDate)}] </span>
+    <a class="underline" href={post.url}>{post.title}</a>
 </>
