@@ -11,7 +11,9 @@ const name = 'ilya rubnich'
         <meta name="viewport" content="width=device-width">
 	    <link rel="icon" href="/favicon.png" />
 
-        <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+        <style global>
+            @import '../styles/global.css'
+        </style>
 
         <title>{(title) ? `${title} - ${name}` : name}</title>
     </head>
