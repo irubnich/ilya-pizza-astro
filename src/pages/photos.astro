@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Gallery from '../components/Gallery.tsx'
+import SanityContentRetriever from '../SanityContentRetriever.ts'
 
-import fs from 'fs'
-
-const path = './public/assets/img/gallery'
-const images = fs.readdirSync(path)
+const retriever = new SanityContentRetriever()
+const images = await retriever.getImages()
 ---
 
 <BaseLayout title="photos">

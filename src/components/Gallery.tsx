@@ -1,13 +1,10 @@
 import { Gallery as G, Item } from 'react-photoswipe-gallery'
+import { Image } from '../SanityContentRetriever'
 import 'photoswipe/dist/photoswipe.css'
 import 'photoswipe/dist/default-skin/default-skin.css'
 
 interface Props {
-    images: [string]
-}
-
-const getPath = (img: string): string => {
-    return `/assets/img/gallery/${img}`
+    images: Image[]
 }
 
 export default function Gallery(props: Props) {
@@ -15,15 +12,17 @@ export default function Gallery(props: Props) {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <G shareButton={false}>
                 {props.images.map(img => {
+                    const thumbUrl = img.image.url + "?w=616"
                     return (
                         <Item
-                            width="2048"
-                            height="1365"
-                            original={getPath(img)}
-                            key={img}
+                            width={img.image.metadata.dimensions.width}
+                            height={img.image.metadata.dimensions.height}
+                            thumbnail={thumbUrl}
+                            original={img.image.url}
+                            key={img.image.url}
                         >
                             {({ ref, open }) => (
-                                <img id={img} ref={ref} onClick={open} src={getPath(img)} />
+                                <img className="cursor-pointer" ref={ref} onClick={open} src={img.image.url} alt={img.alt} />
                             )}
                         </Item>
                     )

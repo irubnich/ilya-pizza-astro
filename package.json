@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/renderer-react": "^0.4.1",
+    "@sanity/client": "^2.23.2",
     "@types/react": "^17.0.38",
     "astro": "^0.22.13",
     "autoprefixer": "^10.4.2",
