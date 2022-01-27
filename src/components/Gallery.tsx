@@ -1,5 +1,5 @@
 import { Gallery as G, Item } from 'react-photoswipe-gallery'
-import { Image } from '../SanityContentRetriever'
+import { Image } from '../PrismicContentRetriever'
 import 'photoswipe/dist/photoswipe.css'
 import 'photoswipe/dist/default-skin/default-skin.css'
 
@@ -12,17 +12,16 @@ export default function Gallery(props: Props) {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <G shareButton={false}>
                 {props.images.map(img => {
-                    const thumbUrl = img.image.url + "?w=616"
                     return (
                         <Item
-                            width={img.image.metadata.dimensions.width}
-                            height={img.image.metadata.dimensions.height}
-                            thumbnail={thumbUrl}
+                            width={img.image.dimensions.width}
+                            height={img.image.dimensions.height}
+                            thumbnail={img.image.url}
                             original={img.image.url}
                             key={img.image.url}
                         >
                             {({ ref, open }) => (
-                                <img className="cursor-pointer" ref={ref} onClick={open} src={img.image.url} alt={img.alt} />
+                                <img className="cursor-pointer" ref={ref} onClick={open} src={img.image.url} alt={img.image.alt} />
                             )}
                         </Item>
                     )

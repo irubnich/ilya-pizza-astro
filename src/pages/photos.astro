@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Gallery from '../components/Gallery.tsx'
-import SanityContentRetriever from '../SanityContentRetriever.ts'
+import PrismicContentRetriever from '../PrismicContentRetriever.ts'
 
-const retriever = new SanityContentRetriever()
+const retriever = new PrismicContentRetriever()
 const images = await retriever.getImages()
 ---
 

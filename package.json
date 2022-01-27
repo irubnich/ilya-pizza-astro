@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "@astrojs/renderer-react": "^0.4.1",
+    "@prismicio/client": "^6.1.0",
+    "@prismicio/helpers": "^2.0.0",
     "@sanity/client": "^2.23.2",
     "@types/react": "^17.0.38",
     "astro": "^0.22.13",
