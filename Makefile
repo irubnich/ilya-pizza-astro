@@ -5,5 +5,5 @@ build:
 	npm run build
 
 deploy: build
-	rsync -avc --delete --rsync-path="sudo rsync" --chown=www-data:www-data dist/ $(username)@$(ip):/var/www/ilya.pizza/html/
+	rsync -avc --delete --rsync-path="noglob sudo rsync" --chown=www-data:www-data dist/ $(username)@$(ip):/var/www/ilya.pizza/html/
 
