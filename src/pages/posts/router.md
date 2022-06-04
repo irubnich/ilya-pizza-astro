@@ -70,8 +70,8 @@ For some reason (that a software guy like me can't ever truly understand), the E
 1. Plug your ESPRESSObin into a USB port with the included cable
 2. Fire up a serial terminal. Note that it will be blank for now and that's expected!
 
-> On macOS, you'll need a driver first that you can get here. After installing the driver and rebooting, you should be able to use this command to get a terminal ready:<br><br>
-> `sudo screen /dev/ttyUSB0 115200 -L`<br><br>
+> On macOS, you'll need a driver first that you can get here. After installing the driver and rebooting, you should be able to use this command to get a terminal ready:<br /><br />
+> `sudo screen /dev/ttyUSB0 115200 -L`<br /><br />
 > If that doesn't work, try running `ls /dev` and find a device that looks like `/dev/ttyUSBX`, where X is a number. You can then use that in the above screen command.
 
 > On Linux, `sudo screen /dev/ttyUSB0 115200` should work without any drivers. The same note applies here as with macOS for finding a non-0 tty device.
