@@ -5,7 +5,7 @@ const buildSha = import.meta.env.BUILD_SHA
     <div class="flex flex-row-reverse">
         <section>
             built with <a class="underline" target="_blank" href="https://astro.build">astro</a> &bull;
-            build {buildSha}
+            build <a class="underline" href={`https://github.com/irubnich/ilya-pizza-astro/commit/${buildSha}`} target="_blank">{buildSha}</a>
         </section>
     </div>
 </footer>
