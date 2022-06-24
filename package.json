@@ -14,7 +14,7 @@
     "@prismicio/client": "^6.1.0",
     "@prismicio/helpers": "^2.0.0",
     "@types/react": "^17.0.38",
-    "astro": "1.0.0-beta.50",
+    "astro": "1.0.0-beta.53",
     "autoprefixer": "^10.4.2",
     "photoswipe": "^4.1.3",
     "react": "^18.0.0",
