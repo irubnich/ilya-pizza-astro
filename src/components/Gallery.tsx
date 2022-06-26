@@ -1,7 +1,6 @@
 import { Gallery as G, Item } from 'react-photoswipe-gallery'
 import { Image } from '../PrismicContentRetriever'
 import 'photoswipe/dist/photoswipe.css'
-import 'photoswipe/dist/default-skin/default-skin.css'
 
 interface Props {
     images: Image[]
@@ -10,7 +9,7 @@ interface Props {
 export default function Gallery(props: Props) {
     return (
         <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <G shareButton={false}>
+            <G>
                 {props.images.map(img => {
                     return (
                         <Item
