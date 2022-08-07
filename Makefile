@@ -1,13 +1,4 @@
-ip := 137.184.242.77
-username := ilya
 buildSha := $(shell git rev-parse --short HEAD)
 
 dev:
 	BUILD_SHA=dev npm run dev
-
-build:
-	BUILD_SHA=$(buildSha) npm run build
-
-deploy: build
-	rsync -avc --delete --rsync-path="noglob sudo rsync" --chown=www-data:www-data dist/ $(username)@$(ip):/var/www/ilya.pizza/html/
-

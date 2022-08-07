@@ -18,7 +18,7 @@ jobs:
       - name: Install deps
         run: npm ci
       - name: Build Astro
-        run: npm run build
+        run: BUILD_SHA=$(git rev-parse --short HEAD) npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
