@@ -1,8 +1,8 @@
 name: GitHub Pages Astro CI
 
-on: push
-  # push:
-  #   branches: [ setup-ghpages ]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build:
