@@ -1,3 +1,5 @@
+import 'astro/jsx-runtime'
+
 interface Props {
     alt?: string
     src: string

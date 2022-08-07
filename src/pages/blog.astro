@@ -2,8 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import {formatDate} from '../utils.ts'
 
-let posts = await Astro.glob('./posts/*.md')
-posts = posts.sort((a, b) =>  new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
+let posts = await Astro.glob('./posts/*.mdx')
+posts = posts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf())
 ---
 
 <BaseLayout title="blog">

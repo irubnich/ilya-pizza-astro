@@ -1,3 +1,4 @@
+import 'astro/jsx-runtime'
 import { Gallery as G, Item } from 'react-photoswipe-gallery'
 import { Image } from '../PrismicContentRetriever'
 import 'photoswipe/dist/photoswipe.css'
